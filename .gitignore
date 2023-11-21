@@ -137,3 +137,13 @@ fabric.properties
 caches/
 
 daemon/
+
+wrapper/
+
+native/
+
+.tmp/
+
+.idea/
+
+.DS_Store
