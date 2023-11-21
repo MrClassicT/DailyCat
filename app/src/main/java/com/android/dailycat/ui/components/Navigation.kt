@@ -62,8 +62,9 @@ fun Navigation(){
         pagerState.animateScrollToPage(selectedTabIndex)
     }
     LaunchedEffect(pagerState.currentPage, pagerState.isScrollInProgress){
-        if(!pagerState.isScrollInProgress)
-        selectedTabIndex = pagerState.currentPage
+        if(!pagerState.isScrollInProgress) {
+            selectedTabIndex = pagerState.currentPage
+        }
     }
 
 
