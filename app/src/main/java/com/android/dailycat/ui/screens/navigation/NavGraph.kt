@@ -19,10 +19,10 @@ fun NavGraph(
             AboutScreen()
         }
         composable(NavigationEnums.DISCOVER.name) {
-            DiscoverScreen()
+            DiscoverScreen(innerPadding)
         }
         composable(NavigationEnums.FAVORITES.name) {
-            FavoritesScreen()
+            FavoritesScreen(innerPadding)
         }
 
 
