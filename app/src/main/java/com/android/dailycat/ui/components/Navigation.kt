@@ -106,7 +106,7 @@ fun Navigation(){
 }
 
 
-@Preview
+@Preview(showBackground = true,backgroundColor = 0xffff)
 @Composable
 fun NavigationPreview(){
     Navigation()

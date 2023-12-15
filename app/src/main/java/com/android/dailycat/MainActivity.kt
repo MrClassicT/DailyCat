@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.android.dailycat.ui.components.Navigation
 import com.android.dailycat.ui.theme.DailyCatTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,7 +19,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                        Navigation()
+                       DailyCatApp(navController = null)
                 }
             }
         }
