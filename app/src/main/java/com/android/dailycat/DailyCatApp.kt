@@ -17,7 +17,7 @@ fun DailyCatApp(navController: NavHostController? = null) {
         topBar = {
 //            Navigation({ navCont.navigate(NavigationEnums.DISCOVER.name) },
 //                { navCont.navigate(NavigationEnums.FAVORITES.name) })
-            Navigation(navController = navCont)
+            Navigation(navController = navCont) // TODO - Check if there is an alternative way to do this. Just passing through the functions gives the problem of Navgraph being initiated too late.
         }
     )
     { innerPadding ->
