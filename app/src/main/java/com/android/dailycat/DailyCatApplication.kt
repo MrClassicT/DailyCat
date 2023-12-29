@@ -1,16 +1,17 @@
 package com.android.dailycat
 
 import android.app.Application
-import com.android.dailycat.data.AppContainer
-import com.android.dailycat.data.AppDataContainer
+import com.android.dailycat.data.DefaultAppContainer
 
 class DailyCatApplication : Application() {
 
-    lateinit var container : AppContainer
+    lateinit var container : DefaultAppContainer
 
     override fun onCreate(){
         super.onCreate()
-        container = AppDataContainer(this)
-        }
+
+        container = DefaultAppContainer(this)
+
+    }
 
 }

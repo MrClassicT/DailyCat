@@ -10,7 +10,7 @@ class ImgRepository(private val imgApiService: ImgApiService) {
         // Call the API and return the image URL
         val response = imgApiService.getCatImage()
         if (response.isSuccessful) {
-            return response.body()?.string() ?: throw Exception("Failed to load image")
+            return response.body()?: throw Exception("Failed to load image")
         } else {
             throw Exception("API call failed with error: ${response.errorBody()?.string()}")
         }

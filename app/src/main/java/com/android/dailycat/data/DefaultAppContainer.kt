@@ -15,4 +15,5 @@ class DefaultAppContainer(context: Context) : AppContainer {
     override val quoteRepository: QuoteRepository by lazy {
         QuoteRepository(NetworkModule.quoteRetrofit.create(QuoteApiService::class.java))
     }
+
 }

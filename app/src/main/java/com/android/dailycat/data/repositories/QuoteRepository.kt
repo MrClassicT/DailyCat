@@ -2,7 +2,6 @@ package com.android.dailycat.data.repositories
 
 import com.android.dailycat.network.QuoteApiService
 
-data class QuoteResponse(val data: List<String>) // Is this needed?
 class QuoteRepository(private val quoteApiService: QuoteApiService) {
 
     suspend fun getQuote(): String {
