@@ -147,3 +147,5 @@ native/
 .idea/
 
 .DS_Store
+
+*.profile
