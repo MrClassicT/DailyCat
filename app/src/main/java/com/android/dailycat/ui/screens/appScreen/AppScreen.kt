@@ -1,4 +1,4 @@
-package com.android.dailycat.ui.screens.navigation
+package com.android.dailycat.ui.screens.appScreen
 
 //  https://developer.android.com/reference/kotlin/androidx/compose/material/icons/package-summary
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -12,23 +12,28 @@ import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.android.dailycat.model.TabItem
+import com.android.dailycat.ui.screens.AppViewModel
 
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun Navigation(tabItems : List<TabItem>) {
+fun AppScreen(tabItems: List<TabItem>) {
 
-    var selectedTabIndex by remember { mutableIntStateOf(0) }
+    val vm: AppViewModel = viewModel()
+    val uiState by vm.uiState.collectAsState()
+
+    val selectedTabIndex = uiState.tabIndex
+
     val pagerState = rememberPagerState {
         tabItems.size
     }
+
 
     // Animate the scrolling effect to the desired page when clicking on the icons.
     LaunchedEffect(selectedTabIndex) {
@@ -36,9 +41,9 @@ fun Navigation(tabItems : List<TabItem>) {
     }
 
     // Making sure the selectedtabindex (top navigation icons) are also working when we use scroll navigation.
-    LaunchedEffect(pagerState.currentPage) {
+    LaunchedEffect(pagerState.currentPage, pagerState.isScrollInProgress) {
         if (!pagerState.isScrollInProgress) {
-            selectedTabIndex = pagerState.currentPage
+            vm.setTabIndex(pagerState.currentPage)
         }
     }
 
@@ -51,7 +56,7 @@ fun Navigation(tabItems : List<TabItem>) {
         TabRow(selectedTabIndex = selectedTabIndex) {
             tabItems.forEachIndexed { index, tabItem ->
                 Tab(selected = index == selectedTabIndex,
-                    onClick = { selectedTabIndex = index },
+                    onClick = { vm.setTabIndex(index) },
                     text = { Text(text = tabItem.title) },
                     icon = {
                         Icon(
@@ -73,7 +78,7 @@ fun Navigation(tabItems : List<TabItem>) {
                 .fillMaxSize()
                 .weight(1f)
         ) { index ->
-            tabItems[index].onClick()
+            tabItems[index].goToPage()
         }
     }
 }
@@ -82,5 +87,5 @@ fun Navigation(tabItems : List<TabItem>) {
 @Preview(showBackground = true, backgroundColor = 0xffff)
 @Composable
 fun NavigationPreview() {
-    Navigation(listOf())
+    AppScreen(listOf())
 }

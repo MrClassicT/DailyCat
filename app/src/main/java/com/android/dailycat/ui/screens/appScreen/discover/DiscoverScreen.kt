@@ -1,4 +1,4 @@
-package com.android.dailycat.ui.screens.discover
+package com.android.dailycat.ui.screens.appScreen.discover
 
 import android.util.Log
 import androidx.compose.foundation.layout.Row

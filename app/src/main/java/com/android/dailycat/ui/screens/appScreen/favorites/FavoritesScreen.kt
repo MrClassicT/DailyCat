@@ -1,4 +1,4 @@
-package com.android.dailycat.ui.screens.favorites
+package com.android.dailycat.ui.screens.appScreen.favorites
 
 import android.util.Log
 import androidx.compose.foundation.layout.Row
