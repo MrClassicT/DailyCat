@@ -11,18 +11,18 @@ import com.android.dailycat.ui.screens.favorites.FavoritesScreen
 
 @Composable
 fun NavGraph(
+    innerPadding: PaddingValues,
     navController: NavHostController,
-    innerPadding: PaddingValues
 ) {
     NavHost(navController = navController, startDestination = NavigationEnums.DISCOVER.name) {
         composable(NavigationEnums.ABOUT.name) {
             AboutScreen()
         }
         composable(NavigationEnums.DISCOVER.name) {
-            DiscoverScreen(innerPadding)
+            DiscoverScreen()
         }
         composable(NavigationEnums.FAVORITES.name) {
-            FavoritesScreen(innerPadding)
+            FavoritesScreen()
         }
 
 

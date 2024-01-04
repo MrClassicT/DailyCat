@@ -6,11 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.NearMe
-import androidx.compose.material.icons.filled.Star
-import androidx.compose.material.icons.outlined.Grade
-import androidx.compose.material.icons.outlined.NearMe
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
@@ -22,36 +17,13 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavController
-
-
-val tabItems = listOf(
-    TabItem(
-        title = NavigationEnums.DISCOVER.name,
-        unSelectedIcon = Icons.Outlined.NearMe,
-        selectedIcon = Icons.Filled.NearMe
-    ),
-    TabItem(
-        title = NavigationEnums.FAVORITES.name,
-        unSelectedIcon = Icons.Outlined.Grade,
-        selectedIcon = Icons.Filled.Star
-    )
-)
-
-
-data class TabItem(
-    val title: String,
-    val unSelectedIcon: ImageVector,
-    val selectedIcon: ImageVector
-)
+import com.android.dailycat.model.TabItem
 
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun Navigation(/*navToDiscover: () -> Unit, navToFavorites: () -> Unit*/ navController:NavController) {
+fun Navigation(tabItems : List<TabItem>) {
 
     var selectedTabIndex by remember { mutableIntStateOf(0) }
     val pagerState = rememberPagerState {
@@ -64,7 +36,7 @@ fun Navigation(/*navToDiscover: () -> Unit, navToFavorites: () -> Unit*/ navCont
     }
 
     // Making sure the selectedtabindex (top navigation icons) are also working when we use scroll navigation.
-    LaunchedEffect(pagerState.currentPage, pagerState.isScrollInProgress) {
+    LaunchedEffect(pagerState.currentPage) {
         if (!pagerState.isScrollInProgress) {
             selectedTabIndex = pagerState.currentPage
         }
@@ -101,13 +73,7 @@ fun Navigation(/*navToDiscover: () -> Unit, navToFavorites: () -> Unit*/ navCont
                 .fillMaxSize()
                 .weight(1f)
         ) { index ->
-
-//                if(index == 0) navToDiscover()
-//                if (index == 1) navToFavorites()
-            if (navController.currentBackStackEntry != null) {
-                navController.navigate(tabItems[index].title)
-            }
-
+            tabItems[index].onClick()
         }
     }
 }
@@ -116,5 +82,5 @@ fun Navigation(/*navToDiscover: () -> Unit, navToFavorites: () -> Unit*/ navCont
 @Preview(showBackground = true, backgroundColor = 0xffff)
 @Composable
 fun NavigationPreview() {
-    Navigation(navController = NavController(LocalContext.current))
+    Navigation(listOf())
 }

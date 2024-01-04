@@ -1,13 +1,21 @@
 package com.android.dailycat.ui.screens.favorites
 
 import android.util.Log
-import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 
 @Composable
-fun FavoritesScreen(innerPadding:PaddingValues){
-    Log.d("DEBUG","On Favorites screen")
+fun FavoritesScreen(){
+    Log.i("Navigation","On Favorites screen")
+    Row(modifier = Modifier.padding(100.dp)) {
+
+        Text(text = "Favorites")
+    }
 
 
 }
@@ -15,5 +23,5 @@ fun FavoritesScreen(innerPadding:PaddingValues){
 @Preview
 @Composable
 fun FavoritesScreenPreview(){
-    FavoritesScreen(PaddingValues())
+    FavoritesScreen()
 }

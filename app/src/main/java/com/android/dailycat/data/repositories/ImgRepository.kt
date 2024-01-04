@@ -6,13 +6,12 @@ import com.android.dailycat.network.ImgApiService
 
 class ImgRepository(private val imgApiService: ImgApiService) {
 
-    suspend fun getCatImage(): String {
+    suspend fun getCatImage(): ByteArray {
         // Call the API and return the image URL
-        val response = imgApiService.getCatImage()
-        if (response.isSuccessful) {
-            return response.body()?: throw Exception("Failed to load image")
-        } else {
-            throw Exception("API call failed with error: ${response.errorBody()?.string()}")
-        }
+        val response = imgApiService.getCatImage().body()?: throw Exception("Failed to load image")
+        val imageData = response.readBytes()
+
+    // TODO - add saving option?
+    return imageData
     }
 }

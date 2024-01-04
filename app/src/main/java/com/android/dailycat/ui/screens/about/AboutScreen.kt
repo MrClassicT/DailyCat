@@ -1,4 +1,5 @@
 package com.android.dailycat.ui.screens.about
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,6 +18,7 @@ import com.android.dailycat.R.drawable.dailycaticon
 
 @Composable
 fun AboutScreen() {
+    Log.i("Navigation","On about screen.")
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
