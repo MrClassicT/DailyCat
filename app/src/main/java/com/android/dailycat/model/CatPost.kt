@@ -3,7 +3,7 @@ package com.android.dailycat.model
 data class CatPost(
     var image: ByteArray,
     var quote: String,
-    var favorite: Boolean,
+    var favorite: Boolean = false,
 ) {
 
     // SUGGESTED CODE, TODO - Check if needed | Generated code by IDE.

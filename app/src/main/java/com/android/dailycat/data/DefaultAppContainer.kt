@@ -1,6 +1,7 @@
 package com.android.dailycat.data
 
 import android.content.Context
+import com.android.dailycat.data.repositories.CatPostRepository
 import com.android.dailycat.data.repositories.ImgRepository
 import com.android.dailycat.data.repositories.QuoteRepository
 import com.android.dailycat.network.ImgApiService
@@ -14,6 +15,10 @@ class DefaultAppContainer(context: Context) : AppContainer {
 
     override val quoteRepository: QuoteRepository by lazy {
         QuoteRepository(NetworkModule.quoteRetrofit.create(QuoteApiService::class.java))
+    }
+
+    override val catPostRepository: CatPostRepository by lazy {
+        CatPostRepository(imgRepository, quoteRepository)
     }
 
 }
