@@ -68,12 +68,9 @@ class AppViewModel(private val catPostRepository: CatPostRepository) : ViewModel
 //        emit(post)
 //    }
 
-    private fun getCatPost() {
-
+    fun getCatPost() {
         try {
             viewModelScope.launch { fetchCatPosts() }
-
-
         } catch (e: Exception) {
             Log.e("GetCatPostError", e.message.toString())
 
@@ -84,16 +81,21 @@ class AppViewModel(private val catPostRepository: CatPostRepository) : ViewModel
     private fun fetchCatPosts() {
         viewModelScope.launch(Dispatchers.IO) { // Use Dispatchers.IO for network/database operations
             val posts = mutableListOf<CatPost>()
-            for (i in 1..5) { // Fetch 5 posts for example
+            for (i in 1..3) { // Fetch 5 posts for example
                 try {
                     val post = catPostRepository.getCatPost()
                     posts.add(post)
+                    Log.i("FetchCatPosts","MORE KITTIES!!!")
                 } catch (e: Exception) {
                     // Handle exceptions, e.g., by logging or setting an error state
-                    Log.e("FetchCatPost", "Error fetching cat post", e)
+                    Log.e("FetchCatPosts", "Error fetching cat post", e)
                 }
             }
-            _catPosts.value = posts // Update the StateFlow with the fetched posts
+
+            val updatedPosts = _catPosts.value.toMutableList().apply {
+                addAll(posts)
+            }
+            _catPosts.value = updatedPosts
         }
     }
 

@@ -38,6 +38,7 @@ fun DiscoverScreen(vm: AppViewModel = viewModel(factory = AppViewModelProvider.F
         // Our page content
         if (catPosts.isNotEmpty()) {
             CatPost(catImage = catPosts[page].image, catQuote = catPosts[page].quote)
+            if(page == catPosts.size-3) vm.getCatPost()
         } else {
             Text(text = "Loading cats...")
         }
