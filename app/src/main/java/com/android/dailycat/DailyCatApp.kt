@@ -1,8 +1,11 @@
 package com.android.dailycat
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material3.FabPosition
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
@@ -10,6 +13,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -41,20 +47,34 @@ fun DailyCatApp(navController: NavHostController = rememberNavController()) {
 
     Scaffold(
         floatingActionButton = {
-            FloatingActionButton(onClick = {
-                if (!onAbout) {
-                    goToAbout()
-                } else {
-                    navController.popBackStack()
-                }
-            }) {
+            // This FAB is needed to reserve space in Scaffold layout
+            // but it will not be shown, hence empty content
+        },
+        floatingActionButtonPosition = FabPosition.Center, // Set to Center or End to reserve space
+    ) { innerPadding ->
+        Box(modifier = Modifier.padding(innerPadding)) {
+            // Your main content goes here
+            NavGraph(navController = navController, innerPadding = innerPadding)
+
+            // Manually position the FAB at the start
+            FloatingActionButton(
+                onClick = {
+                    if (!onAbout) {
+                        goToAbout()
+                    } else {
+                        navController.popBackStack()
+                    }
+                },
+                modifier = Modifier
+                    .align(Alignment.BottomStart)
+                    .padding(start = 16.dp, bottom = 16.dp) // Add some padding to move it away from the edge
+            ) {
                 Icon(
                     imageVector = if (!onAbout) Icons.Default.Info else Icons.Default.Close,
                     contentDescription = if (!onAbout) "About" else "Close about page"
                 )
             }
         }
-    ) { innerPadding ->
-        NavGraph(navController = navController, innerPadding = innerPadding)
     }
+
 }

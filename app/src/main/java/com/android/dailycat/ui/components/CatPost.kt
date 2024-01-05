@@ -7,8 +7,7 @@ import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Star
@@ -26,6 +25,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.zIndex
 import com.android.dailycat.R
 import java.io.ByteArrayOutputStream
 
@@ -33,20 +33,25 @@ import java.io.ByteArrayOutputStream
 @Composable
 fun CatPost(catImage: ByteArray, catQuote: String, isFavorite: Boolean = false) {
 
+
     Column(
-        Modifier.fillMaxHeight(), horizontalAlignment = Alignment.CenterHorizontally
+        Modifier
+            .fillMaxWidth()
+            .zIndex(.1f), horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
         CatImage(catImage)
 
         Text(
-            text = catQuote, fontSize = 18.sp, textAlign = TextAlign.Center, modifier = Modifier
+            text = catQuote, fontSize = 18.sp, textAlign = TextAlign.Center
         )
     }
 
 
     Column(
-        Modifier.fillMaxSize(),
+        Modifier
+            .fillMaxWidth()
+            .zIndex(5f),
         horizontalAlignment = Alignment.End,
         verticalArrangement = Arrangement.Center
     ) {
