@@ -21,11 +21,9 @@ import com.android.dailycat.ui.screens.loader.Loader
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun DiscoverScreen(vm: AppViewModel = viewModel(factory = AppViewModelProvider.Factory)) {
-    // Assume catPosts is a list of CatPost items
-    val catPosts by vm.catPosts.collectAsState()
-//    val catPosts = listOf<CatPost>()
 
-    // Remember a PagerState
+    val catPosts by vm.catPosts.collectAsState()
+
     val pagerState = rememberPagerState(
         initialPage = 0,
         initialPageOffsetFraction = 0f
@@ -33,9 +31,7 @@ fun DiscoverScreen(vm: AppViewModel = viewModel(factory = AppViewModelProvider.F
         catPosts.size
     }
 
-
-    if (catPosts.isNotEmpty() && catPosts.size > 1) {
-
+    if (catPosts.isNotEmpty()) {
         VerticalPager(
             state = pagerState, // The pager state to control the pager
             modifier = Modifier.padding(10.dp), // Fill the max size of the screen
@@ -44,9 +40,7 @@ fun DiscoverScreen(vm: AppViewModel = viewModel(factory = AppViewModelProvider.F
 
             CatPost(catImage = catPosts[page].image, catQuote = catPosts[page].quote)
             if (page == catPosts.size - 3) vm.getCatPost()
-
         }
-
     } else {
         Loader()
     }
