@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.android.dailycat.model.TabItem
+import com.android.dailycat.ui.AppViewModelProvider
 import com.android.dailycat.ui.screens.AppViewModel
 
 
@@ -25,7 +26,8 @@ import com.android.dailycat.ui.screens.AppViewModel
 @Composable
 fun AppScreen(tabItems: List<TabItem>) {
 
-    val vm: AppViewModel = viewModel()
+
+    val vm: AppViewModel = viewModel(factory = AppViewModelProvider.Factory)
     val uiState by vm.uiState.collectAsState()
 
     val selectedTabIndex = uiState.tabIndex

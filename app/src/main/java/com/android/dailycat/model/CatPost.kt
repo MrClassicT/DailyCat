@@ -26,4 +26,6 @@ data class CatPost(
         result = 31 * result + favorite.hashCode()
         return result
     }
+
+
 }

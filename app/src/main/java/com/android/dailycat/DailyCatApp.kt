@@ -14,6 +14,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.android.dailycat.ui.AppViewModelProvider
 import com.android.dailycat.ui.screens.AppViewModel
 import com.android.dailycat.ui.screens.navigation.NavGraph
 import com.android.dailycat.ui.screens.navigation.NavigationEnums
@@ -21,7 +22,7 @@ import com.android.dailycat.ui.screens.navigation.NavigationEnums
 
 @Composable
 fun DailyCatApp(navController: NavHostController = rememberNavController()) {
-    val vm: AppViewModel = viewModel()
+    val vm: AppViewModel = viewModel(factory = AppViewModelProvider.Factory)
     val uiState by vm.uiState.collectAsState()
 
     val goToAbout =

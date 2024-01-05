@@ -87,6 +87,12 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:3.14.6")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
+    //workers
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+
+    // Lifecycle - livedata
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
+
     // Image from url
     implementation("io.coil-kt:coil-compose:2.0.0-rc01")
     //lottie animations

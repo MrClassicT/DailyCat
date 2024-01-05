@@ -23,4 +23,15 @@ object NetworkModule {
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+
+
+    val imgApiService: ImgApiService by lazy {
+        catRetrofit.create(ImgApiService::class.java)
+    }
+
+    val quoteApiService: QuoteApiService by lazy {
+        quoteRetrofit.create(QuoteApiService::class.java)
+    }
 }
+
+
