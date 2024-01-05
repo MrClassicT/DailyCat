@@ -8,10 +8,8 @@ class ImgRepository(private val imgApiService: ImgApiService) {
 
     suspend fun getCatImage(): ByteArray {
         // Call the API and return the image URL
-        val response = imgApiService.getCatImage().body()?: throw Exception("Failed to load image")
-        val imageData = response.readBytes()
+        val response = imgApiService.getCatImage().body() ?: throw Exception("Failed to load image")
 
-    // TODO - add saving option?
-    return imageData
+        return response.byteStream().readBytes()
     }
 }
