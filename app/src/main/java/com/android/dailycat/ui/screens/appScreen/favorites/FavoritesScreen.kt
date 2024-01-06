@@ -1,27 +1,27 @@
 package com.android.dailycat.ui.screens.appScreen.favorites
 
 import android.util.Log
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.android.dailycat.ui.AppViewModelProvider
+import com.android.dailycat.ui.screens.AppViewModel
+import com.android.dailycat.ui.screens.appScreen.components.Feed
 
 @Composable
-fun FavoritesScreen(){
-    Log.i("Navigation","On Favorites screen")
-    Row(modifier = Modifier.padding(100.dp)) {
+fun FavoritesScreen(vm: AppViewModel = viewModel(factory = AppViewModelProvider.Factory)) {
+    Log.i("Navigation", "On Favorites screen")
+    val catPosts by vm.catPosts.collectAsState()
 
-        Text(text = "Favorites")
-    }
+    Feed(catPosts = catPosts) // Should not need to fetch since we'll be providing all favorite posts!
 
 
 }
 
 @Preview
 @Composable
-fun FavoritesScreenPreview(){
+fun FavoritesScreenPreview() {
     FavoritesScreen()
 }

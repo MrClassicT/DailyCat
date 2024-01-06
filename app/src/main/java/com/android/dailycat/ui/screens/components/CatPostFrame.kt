@@ -1,4 +1,4 @@
-package com.android.dailycat.ui.components
+package com.android.dailycat.ui.screens.components
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -31,7 +31,7 @@ import java.io.ByteArrayOutputStream
 
 
 @Composable
-fun CatPost(catImage: ByteArray, catQuote: String, isFavorite: Boolean = false) {
+fun CatPostFrame(catImage: ByteArray, catQuote: String, isFavorite: Boolean = false) {
 
 
     Column(
@@ -105,7 +105,7 @@ fun CatPostPreview() {
 
 
     getIconByteArray(LocalContext.current)?.let {
-        CatPost(
+        CatPostFrame(
             catImage = it,// Template image.
             catQuote = "Meow! Time spent with cats is never wasted."
         )
