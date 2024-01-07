@@ -1,19 +1,18 @@
 package com.android.dailycat.ui.screens
 
+import android.content.Context
 import android.util.Log
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.NearMe
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.outlined.Grade
 import androidx.compose.material.icons.outlined.NearMe
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.android.dailycat.data.repositories.CatPostRepository
 import com.android.dailycat.model.CatPost
 import com.android.dailycat.model.TabItem
+import com.android.dailycat.network.isConnectedToWeb
 import com.android.dailycat.ui.screens.appScreen.discover.DiscoverScreen
 import com.android.dailycat.ui.screens.appScreen.favorites.FavoritesScreen
 import com.android.dailycat.ui.screens.navigation.NavigationEnums
@@ -44,7 +43,8 @@ object TabItems {
 
 data class AppState(
     val tabIndex: Int = 0,
-    val onAboutPage: Boolean = false
+    val onAboutPage: Boolean = false,
+    val isOnline: Boolean = false
 )
 
 class AppViewModel(
@@ -61,16 +61,14 @@ class AppViewModel(
         getCatPost()
     }
 
-    var dailyCatApiState: DailyCatApiState by mutableStateOf(DailyCatApiState.Loading)
-        private set
-
-
     fun getCatPost() {
         try {
-            viewModelScope.launch { fetchCatPosts() }
+            viewModelScope.launch {
+                fetchCatPosts()
+            }
+
         } catch (e: Exception) {
             Log.e("GetCatPostError", e.message.toString())
-
         }
     }
 
@@ -114,6 +112,7 @@ class AppViewModel(
 
             // Update the state to emit the new list.
             _catPosts.value = updatedList
+
         }
 
     }
@@ -131,15 +130,15 @@ class AppViewModel(
         _uiState.update { it.copy(onAboutPage = boolean) }
     }
 
+    fun isConnected(context: Context) {
+        _uiState.update {
+            it.copy(isOnline = isConnectedToWeb(context))
+        }
+    }
+
 
 }
 
-
-sealed interface DailyCatApiState {
-    object Success : DailyCatApiState
-    object Error : DailyCatApiState
-    object Loading : DailyCatApiState
-}
 
 
 
