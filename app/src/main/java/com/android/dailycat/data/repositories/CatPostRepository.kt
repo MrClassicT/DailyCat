@@ -14,7 +14,7 @@ class CatPostRepository(
         val image = imgRepository.getCatImage()
         val quote = quoteRepository.getQuote()
 
-        return CatPost(image, quote)
+        return CatPost(image = image, quote = quote)
     }
 
 }

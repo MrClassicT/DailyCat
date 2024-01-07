@@ -3,7 +3,6 @@ package com.android.dailycat.ui.screens.components
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -31,7 +30,12 @@ import java.io.ByteArrayOutputStream
 
 
 @Composable
-fun CatPostFrame(catImage: ByteArray, catQuote: String, isFavorite: Boolean = false) {
+fun CatPostFrame(
+    catImage: ByteArray,
+    catQuote: String,
+    isFavorite: Boolean = false,
+    onFavoriteClick: (Boolean) -> Unit = {}
+) {
 
 
     Column(
@@ -47,7 +51,6 @@ fun CatPostFrame(catImage: ByteArray, catQuote: String, isFavorite: Boolean = fa
         )
     }
 
-
     Column(
         Modifier
             .fillMaxWidth()
@@ -55,8 +58,8 @@ fun CatPostFrame(catImage: ByteArray, catQuote: String, isFavorite: Boolean = fa
         horizontalAlignment = Alignment.End,
         verticalArrangement = Arrangement.Center
     ) {
-        IconButton(onClick = { //TODO - Implement adding/removing from favorites.
-            Log.d("FavoriteButton", "Clicked! Has yet to be implemented.")
+        IconButton(onClick = {
+            onFavoriteClick(!isFavorite)
         }) {
             if (isFavorite) Icon(
                 Icons.Default.Star, contentDescription = "Remove from favorites"
@@ -64,6 +67,7 @@ fun CatPostFrame(catImage: ByteArray, catQuote: String, isFavorite: Boolean = fa
             else Icon(Icons.Default.StarBorder, contentDescription = "Add to favorites")
         }
     }
+
 
 }
 
@@ -91,23 +95,22 @@ fun CatImage(catImage: ByteArray) {
 @Preview(showBackground = true)
 @Composable
 fun CatPostPreview() {
-    fun getIconByteArray(context: Context): ByteArray? {
-        // Replace 'R.drawable.my_icon' with your image resource
-        val bitmap = BitmapFactory.decodeResource(context.resources, R.drawable.dailycaticon)
-
-        ByteArrayOutputStream().apply {
-            // Compress the bitmap into a JPEG (or PNG) with 100% quality
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, this)
-            return toByteArray()
-        }
-    }
-
-
 
     getIconByteArray(LocalContext.current)?.let {
         CatPostFrame(
-            catImage = it,// Template image.
-            catQuote = "Meow! Time spent with cats is never wasted."
+            catImage = it, // Template image.
+            catQuote = "Meow! Time spent with cats is never wasted.",
         )
+    }
+}
+
+
+fun getIconByteArray(context: Context): ByteArray? {
+    val bitmap = BitmapFactory.decodeResource(context.resources, R.drawable.dailycaticon)
+
+    ByteArrayOutputStream().apply {
+        // Compress the bitmap into a JPEG (or PNG) with 100% quality
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, this)
+        return toByteArray()
     }
 }

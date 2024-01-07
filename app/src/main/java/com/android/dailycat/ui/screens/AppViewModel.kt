@@ -11,6 +11,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.android.dailycat.data.favorites.FavoriteRepository
 import com.android.dailycat.data.repositories.CatPostRepository
 import com.android.dailycat.model.CatPost
 import com.android.dailycat.model.TabItem
@@ -47,7 +48,10 @@ data class AppState(
     val onAboutPage: Boolean = false
 )
 
-class AppViewModel(private val catPostRepository: CatPostRepository) : ViewModel() {
+class AppViewModel(
+    private val catPostRepository: CatPostRepository,
+    private val favoriteRepository: FavoriteRepository
+) : ViewModel() {
 
     private val _uiState = MutableStateFlow(AppState())
     val uiState: StateFlow<AppState> = _uiState.asStateFlow()
@@ -85,7 +89,7 @@ class AppViewModel(private val catPostRepository: CatPostRepository) : ViewModel
                 try {
                     val post = catPostRepository.getCatPost()
                     posts.add(post)
-                    Log.i("FetchCatPosts","MORE KITTIES!!!")
+                    Log.i("FetchCatPosts", "MORE KITTIES!!!")
                 } catch (e: Exception) {
                     // Handle exceptions, e.g., by logging or setting an error state
                     Log.e("FetchCatPosts", "Error fetching cat post", e)
@@ -99,6 +103,20 @@ class AppViewModel(private val catPostRepository: CatPostRepository) : ViewModel
         }
     }
 
+
+    fun addToFavorites(post: CatPost) {
+        viewModelScope.launch {
+            favoriteRepository.insertFavoritePost(post)
+        }
+    }
+
+    fun removeFromFavorites(post: CatPost) {
+        viewModelScope.launch {
+            Log.d("ToDelete", post.id.toString() + "\r\n" + post.quote)
+
+            favoriteRepository.deleteFavoritePost(post)
+        }
+    }
 
     fun setTabIndex(index: Int) {
         _uiState.update {

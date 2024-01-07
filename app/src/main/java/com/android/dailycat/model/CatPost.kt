@@ -1,6 +1,12 @@
 package com.android.dailycat.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "favorites")
 data class CatPost(
+    @PrimaryKey(autoGenerate = true)
+    var id: Int? = null,
     var image: ByteArray,
     var quote: String,
     var favorite: Boolean = false,
