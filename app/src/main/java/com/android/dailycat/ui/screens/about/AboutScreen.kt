@@ -4,8 +4,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -20,14 +22,15 @@ import com.android.dailycat.R.drawable.dailycaticon
 fun AboutScreen() {
     Log.i("Navigation","On about screen.")
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize().padding(bottom = 10.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         // App Icon
         Image(
+            modifier = Modifier.fillMaxHeight(.7f),
             painter = painterResource(dailycaticon),
-            contentDescription = "App Icon"
+            contentDescription = "App Icon",
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -37,7 +40,6 @@ fun AboutScreen() {
             text = "Created by",
             textAlign = TextAlign.Center
         )
-
 
         Text(
             text = "Tristan Cuvelier",
