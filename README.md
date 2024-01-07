@@ -2,6 +2,9 @@
 
 Welcome to the GitHub repository for DailyCat, the purr-fect Android app for cat lovers! DailyCat offers a delightful experience for anyone who adores felines. With an easy-to-use interface and a simple design with adorable habitants. DailyCat brings a daily dose of joy to your life with a variety of cat content. Let's dive into what makes DailyCat a must-have app for cat enthusiasts.
 
+## Origin
+This app was initially developed for my school Android project, but might get some updates later on as well. Depending on my personal free time and motivation. :p
+
 ## Features
 
 - **CatPosts Feed:** Enjoy an endless scroll of cat photos and quotes. From fluffy kittens to majestic adult cats, our feed is filled with heartwarming and amusing feline content to brighten your day.
