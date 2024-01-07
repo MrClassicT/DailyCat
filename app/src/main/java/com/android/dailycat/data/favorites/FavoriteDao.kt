@@ -24,7 +24,7 @@ interface FavoriteDao {
      *
      * @return [Flow]<[List]<[CatPost]>> A flow list of favorite cat posts.
      */
-    @Query("SELECT * FROM favorites") // TODO - Check name
+    @Query("SELECT * FROM favorites")
     fun getAllFavorites(): Flow<List<CatPost>>
 
     /**
