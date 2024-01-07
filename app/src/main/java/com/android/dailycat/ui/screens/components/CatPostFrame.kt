@@ -127,7 +127,6 @@ fun CatImage(catImage: ByteArray, isSmall: Boolean = false) {
         modifier = mod,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
         val imgBitMap = convertImageByteArrayToBitmap(catImage)
 
         Image(

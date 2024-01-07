@@ -48,6 +48,7 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+
     }
 }
 
@@ -61,8 +62,12 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.mockito:mockito-core:5.8.0")
+    testImplementation("org.mockito:mockito-inline:5.2.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0-RC")
+
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.10.01"))
@@ -96,9 +101,8 @@ dependencies {
 
     // Image from url
     implementation("io.coil-kt:coil-compose:2.0.0-rc01")
-    //lottie animations
-    //implementation("com.airbnb.android:lottie-compose:6.1.0")
-    
+
+
     // Room components
     ksp("androidx.room:room-compiler:2.5.0")
     implementation("androidx.room:room-runtime:2.6.0")

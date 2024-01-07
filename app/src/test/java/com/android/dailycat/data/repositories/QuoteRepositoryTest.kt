@@ -49,9 +49,7 @@ class QuoteRepositoryTest {
             )
 
             // When
-            repository.getQuote()
-
-            // The exception is expected to be thrown
+            repository.getQuote() // This should throw error.
         }
     }
 }
