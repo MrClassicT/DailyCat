@@ -1,9 +1,11 @@
 package com.android.dailycat.data.repositories
 
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertThrows
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito.mock
@@ -27,6 +29,9 @@ class CatPostRepositoryTest {
         catPostRepository = CatPostRepository(imgRepository, quoteRepository)
     }
 
+    /**
+     * Test where we check if getCatPost actually returns a post.
+     * **/
     @Test
     fun getCatPost_returnsCatPost() = runTest {
         // Given
@@ -46,5 +51,24 @@ class CatPostRepositoryTest {
         // Verify that the methods were called
         verify(imgRepository).getCatImage()
         verify(quoteRepository).getQuote()
+    }
+
+
+    /**
+     * Test where we check if getCatPost throws an error if something were to go wrong.
+     * **/
+    @Test
+    fun getCatPost_throwsException() = runTest {
+        // Given
+        `when`(imgRepository.getCatImage()).thenThrow(RuntimeException("Failed to load image"))
+        `when`(quoteRepository.getQuote()).thenReturn("Some quote")
+
+        // Then
+        assertThrows(RuntimeException::class.java) {
+            // When
+            runBlocking {
+                catPostRepository.getCatPost()
+            }
+        }
     }
 }

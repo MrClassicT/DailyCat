@@ -15,6 +15,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
@@ -65,9 +66,10 @@ fun DailyCatApp(navController: NavHostController = rememberNavController()) {
                         navController.popBackStack()
                     }
                 },
-                modifier = Modifier
+                modifier = Modifier.testTag("About")
                     .align(Alignment.BottomStart)
                     .padding(start = 16.dp, bottom = 16.dp) // Add some padding to move it away from the edge
+
             ) {
                 Icon(
                     imageVector = if (!onAbout) Icons.Default.Info else Icons.Default.Close,

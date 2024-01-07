@@ -24,6 +24,7 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -74,7 +75,7 @@ fun CatPostFrame(
         horizontalAlignment = Alignment.End,
         verticalArrangement = Arrangement.Center
     ) {
-        IconButton(onClick = onFavoriteClick) {
+        IconButton(modifier=Modifier.testTag("Favorite") ,onClick = onFavoriteClick) {
             if (catPost.favorite) {
                 Icon(Icons.Default.Star, contentDescription = "Remove from favorites")
             } else {

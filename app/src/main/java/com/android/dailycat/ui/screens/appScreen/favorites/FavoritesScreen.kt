@@ -11,6 +11,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.android.dailycat.model.CatPost
@@ -23,14 +24,14 @@ fun FavoritesScreen(vm: FavoriteViewModel = viewModel(factory = AppViewModelProv
     Log.i("Navigation", "On Favorites screen")
     val favState by vm.uiState.collectAsState()
 
-    FavoritesScreenListing(list = favState.favoritePosts)
+    FavoritesScreenListing(modifier = Modifier.testTag("FavPage"), list = favState.favoritePosts)
 
 }
 
 @Composable
-fun FavoritesScreenListing(list: List<CatPost>) {
+fun FavoritesScreenListing(modifier: Modifier = Modifier, list: List<CatPost>) {
     if (list.isNotEmpty())
-        Feed(catPosts = list){} // Should not need to fetch since we'll be providing all favorite posts!
+        Feed(catPosts = list) {} // Should not need to fetch since we'll be providing all favorite posts!
     else Column(
         Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
