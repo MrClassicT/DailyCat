@@ -12,6 +12,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
+/**
+ * Composable function that displays a loading message.
+ *
+ * This function creates a simple loader UI, which includes a message indicating that more content is being loaded.
+ * The message is displayed in the center of the screen.
+ */
 @Composable
 fun Loader(){
 
@@ -28,6 +34,11 @@ fun Loader(){
 
 }
 
+/**
+ * Preview for the Loader composable.
+ *
+ * Provides a preview of the Loader composable within the development environment, showcasing the loading message.
+ */
 @Preview
 @Composable
 fun LoaderPreview(){

@@ -20,6 +20,14 @@ import com.android.dailycat.ui.screens.AppViewModel
 import com.android.dailycat.ui.screens.appScreen.components.Feed
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+/**
+ * Composable function that creates the 'Discover' screen of the application.
+ *
+ * This function displays content based on the network connectivity state. If the device is connected
+ * to the internet, it shows a feed of cat posts. Otherwise, it displays an offline screen.
+ *
+ * @param vm The [AppViewModel] instance, used to fetch and display cat posts.
+ */
 @OptIn(ExperimentalCoroutinesApi::class)
 @Composable
 fun DiscoverScreen(vm: AppViewModel = viewModel(factory = AppViewModelProvider.Factory)) {
@@ -37,13 +45,23 @@ fun DiscoverScreen(vm: AppViewModel = viewModel(factory = AppViewModelProvider.F
     }
 }
 
-
+/**
+ * Preview function for the 'Discover' screen.
+ *
+ * Provides a preview of the 'Discover' screen inside the IDE, showcasing how it will look in the app.
+ */
 @Preview
 @Composable
 fun DiscoverScreenPreview() {
     DiscoverScreen()
 }
 
+/**
+ * Composable function that creates the offline screen.
+ *
+ * This screen is displayed when there is no internet connection. It shows a message indicating the lack
+ * of connectivity in a centered text format.
+ */
 @Composable
 fun OfflineScreen() {
     Column(

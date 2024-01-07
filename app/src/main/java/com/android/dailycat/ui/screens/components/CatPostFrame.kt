@@ -35,6 +35,12 @@ import com.android.dailycat.model.CatPost
 import java.io.ByteArrayOutputStream
 
 
+/**
+ * Composable that displays a frame for a cat post, including the image, quote, and a favorite icon.
+ *
+ * @param catPost The cat post to display.
+ * @param onFavoriteClick The action to perform when the favorite icon is clicked.
+ */
 @Composable
 fun CatPostFrame(
     catPost: CatPost,
@@ -87,7 +93,12 @@ fun CatPostFrame(
 
 }
 
-
+/**
+ * Internal composable that displays the content of a cat post.
+ *
+ * @param catPost The cat post whose content is to be displayed.
+ * @param smallImg Boolean flag to determine if the image should be displayed smaller (for landscape mode).
+ */
 @Composable
 private fun Post(catPost: CatPost, smallImg: Boolean = false) {
     CatImage(catPost.image, smallImg)
@@ -107,10 +118,22 @@ private fun Post(catPost: CatPost, smallImg: Boolean = false) {
     )
 }
 
+/**
+ * Converts a byte array to a Bitmap.
+ *
+ * @param imageData The byte array to convert.
+ * @return The resulting Bitmap.
+ */
 fun convertImageByteArrayToBitmap(imageData: ByteArray): Bitmap {
     return BitmapFactory.decodeByteArray(imageData, 0, imageData.size)
 }
 
+/**
+ * Composable that displays an image from a byte array.
+ *
+ * @param catImage The byte array containing the image data.
+ * @param isSmall Boolean flag to determine if the image should be displayed smaller.
+ */
 @Composable
 fun CatImage(catImage: ByteArray, isSmall: Boolean = false) {
     var mod: Modifier = Modifier
@@ -138,6 +161,9 @@ fun CatImage(catImage: ByteArray, isSmall: Boolean = false) {
     }
 }
 
+/**
+ * Preview for the CatPostFrame in portrait orientation.
+ */
 @Preview(showBackground = true, widthDp = 300, heightDp = 600)
 @Composable
 fun Portrait_CatPostPreview() {
@@ -152,6 +178,9 @@ fun Portrait_CatPostPreview() {
     }
 }
 
+/**
+ * Preview for the CatPostFrame in landscape orientation.
+ */
 @Preview(showBackground = true, widthDp = 600, heightDp = 300)
 @Composable
 fun Landscape_CatPostPreview() {
@@ -166,6 +195,12 @@ fun Landscape_CatPostPreview() {
     }
 }
 
+/**
+ * Retrieves a drawable as a byte array. Used to render previews.
+ *
+ * @param context The context to access resources.
+ * @return The byte array of the drawable.
+ */
 fun getIconByteArray(context: Context): ByteArray? {
     val bitmap = BitmapFactory.decodeResource(context.resources, R.drawable.dailycaticon)
 

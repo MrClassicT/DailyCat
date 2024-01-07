@@ -9,15 +9,20 @@ import com.android.dailycat.ui.screens.TabItems
 import com.android.dailycat.ui.screens.about.AboutScreen
 import com.android.dailycat.ui.screens.appScreen.AppScreen
 
+/**
+ * Composable function that sets up the navigation graph for the application.
+ *
+ * This function uses Jetpack Compose Navigation to set up a navigation graph, defining the screens
+ * and their navigation paths within the app. It includes navigation for the main app screen and the about screen.
+ *
+ * @param innerPadding The padding to apply around the navigation graph.
+ * @param navController The [NavHostController] that manages the navigation.
+ */
 @Composable
 fun NavGraph(
     innerPadding: PaddingValues,
     navController: NavHostController,
-//    favoriteViewModel: FavoriteViewModel = viewModel(factory = AppViewModelProvider.Factory)
 ) {
-
-//    val favoriteUiState by favoriteViewModel.uiState.collectAsState()
-//    if(favoriteUiState.favoritePosts.isEmpty()) Log.i("Favorites", "No Favorites found!")
 
     NavHost(
         navController = navController, startDestination = NavigationEnums.APP.DISCOVER.name

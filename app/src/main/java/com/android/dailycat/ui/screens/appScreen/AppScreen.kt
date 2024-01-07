@@ -22,6 +22,14 @@ import com.android.dailycat.ui.AppViewModelProvider
 import com.android.dailycat.ui.screens.AppViewModel
 
 
+/**
+ * Composable function that creates the main screen of the application with tab navigation.
+ *
+ * This function displays a tabbed interface, allowing the user to navigate between different screens.
+ * It uses [HorizontalPager] for the page content and [TabRow] for the tab navigation.
+ *
+ * @param tabItems The list of [TabItem] objects representing each tab in the application.
+ */
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun AppScreen(tabItems: List<TabItem>) {
@@ -85,7 +93,11 @@ fun AppScreen(tabItems: List<TabItem>) {
     }
 }
 
-
+/**
+ * Preview function for the main navigation screen.
+ *
+ * Provides a preview of the main screen inside the IDE, showcasing the layout with no content.
+ */
 @Preview(showBackground = true, backgroundColor = 0xffff)
 @Composable
 fun NavigationPreview() {

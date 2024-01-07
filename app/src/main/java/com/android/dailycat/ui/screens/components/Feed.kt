@@ -16,6 +16,16 @@ import com.android.dailycat.ui.screens.appScreen.favorites.FavoriteViewModel
 import com.android.dailycat.ui.screens.components.CatPostFrame
 import com.android.dailycat.ui.screens.loader.Loader
 
+
+/**
+ * Composable function that creates a feed of cat posts.
+ *
+ * This function displays a vertical pager containing a list of cat posts. Each cat post can be favorited,
+ * and new posts are loaded when the user scrolls near the end of the list.
+ *
+ * @param catPosts The list of cat posts to display in the feed.
+ * @param loadMore The lambda function to call for loading more cat posts when needed.
+ */
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun Feed(

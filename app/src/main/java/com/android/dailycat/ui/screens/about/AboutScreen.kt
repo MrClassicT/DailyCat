@@ -18,6 +18,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.android.dailycat.R.drawable.dailycaticon
 
+/**
+ * Composable function that creates the 'About' screen of the application.
+ *
+ * This function displays the 'About' screen, showing an app icon and text information about the creator.
+ * It utilizes Column layout to arrange the elements vertically and align them in the center.
+ */
 @Composable
 fun AboutScreen() {
     Log.i("Navigation","On about screen.")
@@ -48,6 +54,11 @@ fun AboutScreen() {
     }
 }
 
+/**
+ * Preview function for the 'About' screen.
+ *
+ * Provides a preview of the 'About' screen inside the IDE, showcasing how it will look in the app.
+ */
 @Preview(showBackground = true, backgroundColor = 0xffff )
 @Composable
 fun AboutScreenPreview(){

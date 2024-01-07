@@ -19,6 +19,14 @@ import com.android.dailycat.ui.AppViewModelProvider
 import com.android.dailycat.ui.screens.appScreen.components.Feed
 import com.android.dailycat.ui.screens.components.getIconByteArray
 
+/**
+ * Composable function that creates the 'Favorites' screen of the application.
+ *
+ * This function displays the favorite cat posts stored in the application. It utilizes the [FavoriteViewModel]
+ * to observe and display the favorite posts.
+ *
+ * @param vm The [FavoriteViewModel] instance used to fetch and display favorite posts.
+ */
 @Composable
 fun FavoritesScreen(vm: FavoriteViewModel = viewModel(factory = AppViewModelProvider.Factory)) {
     Log.i("Navigation", "On Favorites screen")
@@ -28,6 +36,13 @@ fun FavoritesScreen(vm: FavoriteViewModel = viewModel(factory = AppViewModelProv
 
 }
 
+/**
+ * Composable function to list favorite cat posts.
+ *
+ * Displays a list of favorite cat posts using the Feed component or shows a message if there are no favorites.
+ *
+ * @param list The list of [CatPost] items to display.
+ */
 @Composable
 fun FavoritesScreenListing(modifier: Modifier = Modifier, list: List<CatPost>) {
     if (list.isNotEmpty())
@@ -41,12 +56,22 @@ fun FavoritesScreenListing(modifier: Modifier = Modifier, list: List<CatPost>) {
     }
 }
 
+/**
+ * Preview function for displaying the 'No Favorites Yet' message.
+ *
+ * Provides a preview of the message shown in the 'Favorites' screen when there are no favorites.
+ */
 @Preview
 @Composable
 fun NoFavoritesYetScreenPreview() {
     FavoritesScreenListing(list = listOf())
 }
 
+/**
+ * Preview function for the 'Favorites' screen with sample data.
+ *
+ * Provides a preview of the 'Favorites' screen with a list of sample favorite cat posts.
+ */
 @Preview
 @Composable
 fun FavoritesScreenPreview() {

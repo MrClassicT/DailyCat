@@ -15,6 +15,9 @@ import kotlinx.coroutines.flow.callbackFlow
 
 // SRC: https://medium.com/scalereal/observing-live-connectivity-status-in-jetpack-compose-way-f849ce8431c7 -> Only removed deprecated method.
 
+/**
+ * Represents the network connection state.
+ */
 sealed class ConnectionState {
     object Available : ConnectionState()
     object Unavailable : ConnectionState()
@@ -22,7 +25,7 @@ sealed class ConnectionState {
 
 
 /**
- * Network utility to get current state of internet connection
+ * Extension property to get the current network connectivity state of the context.
  */
 val Context.currentConnectivityState: ConnectionState
     get() {
@@ -31,6 +34,12 @@ val Context.currentConnectivityState: ConnectionState
         return getCurrentConnectivityState(connectivityManager)
     }
 
+/**
+ * Retrieves the current network connectivity state.
+ *
+ * @param connectivityManager The ConnectivityManager instance to check the network status.
+ * @return [ConnectionState] The current state of the network connection.
+ */
 private fun getCurrentConnectivityState(
     connectivityManager: ConnectivityManager
 ): ConnectionState {
@@ -39,9 +48,10 @@ private fun getCurrentConnectivityState(
     return if (connected != false) ConnectionState.Available else ConnectionState.Unavailable
 }
 
-
 /**
- * Network Utility to observe availability or unavailability of Internet connection
+ * Observes network connectivity changes as a Flow.
+ *
+ * @return A Flow emitting [ConnectionState] reflecting the real-time network connectivity state.
  */
 @ExperimentalCoroutinesApi
 fun Context.observeConnectivityAsFlow() = callbackFlow {
@@ -66,6 +76,12 @@ fun Context.observeConnectivityAsFlow() = callbackFlow {
     }
 }
 
+/**
+ * Creates a network callback for network connectivity changes.
+ *
+ * @param callback The function to invoke with the new [ConnectionState] when the connectivity state changes.
+ * @return An instance of [ConnectivityManager.NetworkCallback] that calls the provided callback function.
+ */
 fun NetworkCallback(callback: (ConnectionState) -> Unit): ConnectivityManager.NetworkCallback {
     return object : ConnectivityManager.NetworkCallback() {
         override fun onAvailable(network: Network) {
@@ -78,6 +94,11 @@ fun NetworkCallback(callback: (ConnectionState) -> Unit): ConnectivityManager.Ne
     }
 }
 
+/**
+ * Composable function to observe and react to network connectivity changes.
+ *
+ * @return A [State] object of type [ConnectionState] that represents the current network connectivity state.
+ */
 @ExperimentalCoroutinesApi
 @Composable
 fun connectivityState(): State<ConnectionState> {

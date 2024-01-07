@@ -50,11 +50,12 @@ fun DailyCatApp(navController: NavHostController = rememberNavController()) {
         floatingActionButton = {
             // This FAB is needed to reserve space in Scaffold layout
             // but it will not be shown, hence empty content
+            // This is all because we wanted the about button to be shown on the left side.
         },
         floatingActionButtonPosition = FabPosition.Center, // Set to Center or End to reserve space
     ) { innerPadding ->
         Box(modifier = Modifier.padding(innerPadding)) {
-            // Your main content goes here
+            // Main content
             NavGraph(navController = navController, innerPadding = innerPadding)
 
             // Manually position the FAB at the start

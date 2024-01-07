@@ -8,7 +8,7 @@ import com.android.dailycat.DailyCatApplication
 import com.android.dailycat.ui.screens.AppViewModel
 import com.android.dailycat.ui.screens.appScreen.favorites.FavoriteViewModel
 
-object AppViewModelProvider {
+object AppViewModelProvider { // Provides appviewmodels to the appropriate locations.
     private var Instance: AppViewModel? = null
 
     val Factory: ViewModelProvider.Factory = viewModelFactory {

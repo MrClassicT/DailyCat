@@ -21,6 +21,12 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
+/**
+ * Singleton object that defines the list of tab items for the application.
+ *
+ * This object provides a list of [TabItem]s, each representing a tab in the application's main screen,
+ * including Discover and Favorites tabs. These are used for the navigation but contain their content's location as well.
+ */
 object TabItems {
 
     val tabList = listOf(
@@ -39,11 +45,25 @@ object TabItems {
     )
 }
 
+/**
+ * Data class representing the UI state of the app.
+ *
+ * @property tabIndex The index of the currently selected tab.
+ * @property onAboutPage Boolean indicating if the about page is currently displayed. We need this to animate FAB properly.
+ */
 data class AppState(
     val tabIndex: Int = 0,
     val onAboutPage: Boolean = false,
 )
 
+/**
+ * ViewModel for the main app screen.
+ *
+ * This ViewModel manages the UI state and cat post data for the app. It fetches cat posts from a repository
+ * and provides functionality to toggle favorite status and change tabs.
+ *
+ * @property catPostRepository Repository for fetching cat posts.
+ */
 class AppViewModel(
     private val catPostRepository: CatPostRepository
 ) : ViewModel() {
