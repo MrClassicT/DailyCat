@@ -51,5 +51,6 @@ fun Feed(
         }
     } else {
         Loader()
+        loadMore()
     }
 }
