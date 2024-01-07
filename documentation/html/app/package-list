@@ -1,0 +1,177 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.android.dailycat.data.favorites////PointingToDeclaration/app/com.android.dailycat.data.favorites/index.html
+$dokka.location:com.android.dailycat.data.favorites/FavoriteDao///PointingToDeclaration/app/com.android.dailycat.data.favorites/-favorite-dao/index.html
+$dokka.location:com.android.dailycat.data.favorites/FavoriteDao/delete/#kotlin.String#kotlin.ByteArray/PointingToDeclaration/app/com.android.dailycat.data.favorites/-favorite-dao/delete.html
+$dokka.location:com.android.dailycat.data.favorites/FavoriteDao/getAllFavorites/#/PointingToDeclaration/app/com.android.dailycat.data.favorites/-favorite-dao/get-all-favorites.html
+$dokka.location:com.android.dailycat.data.favorites/FavoriteDao/insert/#com.android.dailycat.model.CatPost/PointingToDeclaration/app/com.android.dailycat.data.favorites/-favorite-dao/insert.html
+$dokka.location:com.android.dailycat.data.favorites/FavoriteRepository///PointingToDeclaration/app/com.android.dailycat.data.favorites/-favorite-repository/index.html
+$dokka.location:com.android.dailycat.data.favorites/FavoriteRepository/deleteFavoritePost/#com.android.dailycat.model.CatPost/PointingToDeclaration/app/com.android.dailycat.data.favorites/-favorite-repository/delete-favorite-post.html
+$dokka.location:com.android.dailycat.data.favorites/FavoriteRepository/getAllFavoritePostStream/#/PointingToDeclaration/app/com.android.dailycat.data.favorites/-favorite-repository/get-all-favorite-post-stream.html
+$dokka.location:com.android.dailycat.data.favorites/FavoriteRepository/insertFavoritePost/#com.android.dailycat.model.CatPost/PointingToDeclaration/app/com.android.dailycat.data.favorites/-favorite-repository/insert-favorite-post.html
+$dokka.location:com.android.dailycat.data.favorites/OfflineFavoriteRepository///PointingToDeclaration/app/com.android.dailycat.data.favorites/-offline-favorite-repository/index.html
+$dokka.location:com.android.dailycat.data.favorites/OfflineFavoriteRepository/OfflineFavoriteRepository/#com.android.dailycat.data.favorites.FavoriteDao/PointingToDeclaration/app/com.android.dailycat.data.favorites/-offline-favorite-repository/-offline-favorite-repository.html
+$dokka.location:com.android.dailycat.data.favorites/OfflineFavoriteRepository/deleteFavoritePost/#com.android.dailycat.model.CatPost/PointingToDeclaration/app/com.android.dailycat.data.favorites/-offline-favorite-repository/delete-favorite-post.html
+$dokka.location:com.android.dailycat.data.favorites/OfflineFavoriteRepository/getAllFavoritePostStream/#/PointingToDeclaration/app/com.android.dailycat.data.favorites/-offline-favorite-repository/get-all-favorite-post-stream.html
+$dokka.location:com.android.dailycat.data.favorites/OfflineFavoriteRepository/insertFavoritePost/#com.android.dailycat.model.CatPost/PointingToDeclaration/app/com.android.dailycat.data.favorites/-offline-favorite-repository/insert-favorite-post.html
+$dokka.location:com.android.dailycat.data.repositories////PointingToDeclaration/app/com.android.dailycat.data.repositories/index.html
+$dokka.location:com.android.dailycat.data.repositories/CatPostRepository///PointingToDeclaration/app/com.android.dailycat.data.repositories/-cat-post-repository/index.html
+$dokka.location:com.android.dailycat.data.repositories/CatPostRepository/CatPostRepository/#com.android.dailycat.data.repositories.ImgRepository#com.android.dailycat.data.repositories.QuoteRepository/PointingToDeclaration/app/com.android.dailycat.data.repositories/-cat-post-repository/-cat-post-repository.html
+$dokka.location:com.android.dailycat.data.repositories/CatPostRepository/getCatPost/#/PointingToDeclaration/app/com.android.dailycat.data.repositories/-cat-post-repository/get-cat-post.html
+$dokka.location:com.android.dailycat.data.repositories/ImgRepository///PointingToDeclaration/app/com.android.dailycat.data.repositories/-img-repository/index.html
+$dokka.location:com.android.dailycat.data.repositories/ImgRepository/ImgRepository/#com.android.dailycat.network.ImgApiService/PointingToDeclaration/app/com.android.dailycat.data.repositories/-img-repository/-img-repository.html
+$dokka.location:com.android.dailycat.data.repositories/ImgRepository/getCatImage/#/PointingToDeclaration/app/com.android.dailycat.data.repositories/-img-repository/get-cat-image.html
+$dokka.location:com.android.dailycat.data.repositories/QuoteRepository///PointingToDeclaration/app/com.android.dailycat.data.repositories/-quote-repository/index.html
+$dokka.location:com.android.dailycat.data.repositories/QuoteRepository/QuoteRepository/#com.android.dailycat.network.QuoteApiService/PointingToDeclaration/app/com.android.dailycat.data.repositories/-quote-repository/-quote-repository.html
+$dokka.location:com.android.dailycat.data.repositories/QuoteRepository/getQuote/#/PointingToDeclaration/app/com.android.dailycat.data.repositories/-quote-repository/get-quote.html
+$dokka.location:com.android.dailycat.data////PointingToDeclaration/app/com.android.dailycat.data/index.html
+$dokka.location:com.android.dailycat.data/AppContainer///PointingToDeclaration/app/com.android.dailycat.data/-app-container/index.html
+$dokka.location:com.android.dailycat.data/AppContainer/catPostRepository/#/PointingToDeclaration/app/com.android.dailycat.data/-app-container/cat-post-repository.html
+$dokka.location:com.android.dailycat.data/AppContainer/favoriteRepository/#/PointingToDeclaration/app/com.android.dailycat.data/-app-container/favorite-repository.html
+$dokka.location:com.android.dailycat.data/AppContainer/imgRepository/#/PointingToDeclaration/app/com.android.dailycat.data/-app-container/img-repository.html
+$dokka.location:com.android.dailycat.data/AppContainer/quoteRepository/#/PointingToDeclaration/app/com.android.dailycat.data/-app-container/quote-repository.html
+$dokka.location:com.android.dailycat.data/DefaultAppContainer///PointingToDeclaration/app/com.android.dailycat.data/-default-app-container/index.html
+$dokka.location:com.android.dailycat.data/DefaultAppContainer/DefaultAppContainer/#android.content.Context/PointingToDeclaration/app/com.android.dailycat.data/-default-app-container/-default-app-container.html
+$dokka.location:com.android.dailycat.data/DefaultAppContainer/catPostRepository/#/PointingToDeclaration/app/com.android.dailycat.data/-default-app-container/cat-post-repository.html
+$dokka.location:com.android.dailycat.data/DefaultAppContainer/favoriteRepository/#/PointingToDeclaration/app/com.android.dailycat.data/-default-app-container/favorite-repository.html
+$dokka.location:com.android.dailycat.data/DefaultAppContainer/imgRepository/#/PointingToDeclaration/app/com.android.dailycat.data/-default-app-container/img-repository.html
+$dokka.location:com.android.dailycat.data/DefaultAppContainer/quoteRepository/#/PointingToDeclaration/app/com.android.dailycat.data/-default-app-container/quote-repository.html
+$dokka.location:com.android.dailycat.data/FavoriteDatabase.Companion///PointingToDeclaration/app/com.android.dailycat.data/-favorite-database/-companion/index.html
+$dokka.location:com.android.dailycat.data/FavoriteDatabase.Companion/getDatabase/#android.content.Context/PointingToDeclaration/app/com.android.dailycat.data/-favorite-database/-companion/get-database.html
+$dokka.location:com.android.dailycat.data/FavoriteDatabase///PointingToDeclaration/app/com.android.dailycat.data/-favorite-database/index.html
+$dokka.location:com.android.dailycat.data/FavoriteDatabase/FavoriteDatabase/#/PointingToDeclaration/app/com.android.dailycat.data/-favorite-database/-favorite-database.html
+$dokka.location:com.android.dailycat.data/FavoriteDatabase/favoriteDao/#/PointingToDeclaration/app/com.android.dailycat.data/-favorite-database/favorite-dao.html
+$dokka.location:com.android.dailycat.model////PointingToDeclaration/app/com.android.dailycat.model/index.html
+$dokka.location:com.android.dailycat.model/CatPost///PointingToDeclaration/app/com.android.dailycat.model/-cat-post/index.html
+$dokka.location:com.android.dailycat.model/CatPost/CatPost/#kotlin.Int?#kotlin.ByteArray#kotlin.String#kotlin.Boolean/PointingToDeclaration/app/com.android.dailycat.model/-cat-post/-cat-post.html
+$dokka.location:com.android.dailycat.model/CatPost/equals/#kotlin.Any?/PointingToDeclaration/app/com.android.dailycat.model/-cat-post/equals.html
+$dokka.location:com.android.dailycat.model/CatPost/favorite/#/PointingToDeclaration/app/com.android.dailycat.model/-cat-post/favorite.html
+$dokka.location:com.android.dailycat.model/CatPost/hashCode/#/PointingToDeclaration/app/com.android.dailycat.model/-cat-post/hash-code.html
+$dokka.location:com.android.dailycat.model/CatPost/id/#/PointingToDeclaration/app/com.android.dailycat.model/-cat-post/id.html
+$dokka.location:com.android.dailycat.model/CatPost/image/#/PointingToDeclaration/app/com.android.dailycat.model/-cat-post/image.html
+$dokka.location:com.android.dailycat.model/CatPost/quote/#/PointingToDeclaration/app/com.android.dailycat.model/-cat-post/quote.html
+$dokka.location:com.android.dailycat.model/TabItem///PointingToDeclaration/app/com.android.dailycat.model/-tab-item/index.html
+$dokka.location:com.android.dailycat.model/TabItem/TabItem/#kotlin.String#androidx.compose.ui.graphics.vector.ImageVector#androidx.compose.ui.graphics.vector.ImageVector#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.android.dailycat.model/-tab-item/-tab-item.html
+$dokka.location:com.android.dailycat.model/TabItem/goToPage/#/PointingToDeclaration/app/com.android.dailycat.model/-tab-item/go-to-page.html
+$dokka.location:com.android.dailycat.model/TabItem/selectedIcon/#/PointingToDeclaration/app/com.android.dailycat.model/-tab-item/selected-icon.html
+$dokka.location:com.android.dailycat.model/TabItem/title/#/PointingToDeclaration/app/com.android.dailycat.model/-tab-item/title.html
+$dokka.location:com.android.dailycat.model/TabItem/unSelectedIcon/#/PointingToDeclaration/app/com.android.dailycat.model/-tab-item/un-selected-icon.html
+$dokka.location:com.android.dailycat.network////PointingToDeclaration/app/com.android.dailycat.network/index.html
+$dokka.location:com.android.dailycat.network//NetworkCallback/#kotlin.Function1[com.android.dailycat.network.ConnectionState,kotlin.Unit]/PointingToDeclaration/app/com.android.dailycat.network/-network-callback.html
+$dokka.location:com.android.dailycat.network//connectivityState/#/PointingToDeclaration/app/com.android.dailycat.network/connectivity-state.html
+$dokka.location:com.android.dailycat.network//currentConnectivityState/android.content.Context#/PointingToDeclaration/app/com.android.dailycat.network/current-connectivity-state.html
+$dokka.location:com.android.dailycat.network//observeConnectivityAsFlow/android.content.Context#/PointingToDeclaration/app/com.android.dailycat.network/observe-connectivity-as-flow.html
+$dokka.location:com.android.dailycat.network/ConnectionState.Available///PointingToDeclaration/app/com.android.dailycat.network/-connection-state/-available/index.html
+$dokka.location:com.android.dailycat.network/ConnectionState.Unavailable///PointingToDeclaration/app/com.android.dailycat.network/-connection-state/-unavailable/index.html
+$dokka.location:com.android.dailycat.network/ConnectionState///PointingToDeclaration/app/com.android.dailycat.network/-connection-state/index.html
+$dokka.location:com.android.dailycat.network/ImgApiService///PointingToDeclaration/app/com.android.dailycat.network/-img-api-service/index.html
+$dokka.location:com.android.dailycat.network/ImgApiService/getCatImage/#/PointingToDeclaration/app/com.android.dailycat.network/-img-api-service/get-cat-image.html
+$dokka.location:com.android.dailycat.network/NetworkModule///PointingToDeclaration/app/com.android.dailycat.network/-network-module/index.html
+$dokka.location:com.android.dailycat.network/NetworkModule/catRetrofit/#/PointingToDeclaration/app/com.android.dailycat.network/-network-module/cat-retrofit.html
+$dokka.location:com.android.dailycat.network/NetworkModule/quoteRetrofit/#/PointingToDeclaration/app/com.android.dailycat.network/-network-module/quote-retrofit.html
+$dokka.location:com.android.dailycat.network/QuoteApiService///PointingToDeclaration/app/com.android.dailycat.network/-quote-api-service/index.html
+$dokka.location:com.android.dailycat.network/QuoteApiService/getQuote/#/PointingToDeclaration/app/com.android.dailycat.network/-quote-api-service/get-quote.html
+$dokka.location:com.android.dailycat.network/QuoteResponse///PointingToDeclaration/app/com.android.dailycat.network/-quote-response/index.html
+$dokka.location:com.android.dailycat.network/QuoteResponse/QuoteResponse/#kotlin.collections.List[kotlin.String]/PointingToDeclaration/app/com.android.dailycat.network/-quote-response/-quote-response.html
+$dokka.location:com.android.dailycat.network/QuoteResponse/data/#/PointingToDeclaration/app/com.android.dailycat.network/-quote-response/data.html
+$dokka.location:com.android.dailycat.ui.screens.about////PointingToDeclaration/app/com.android.dailycat.ui.screens.about/index.html
+$dokka.location:com.android.dailycat.ui.screens.about//AboutScreen/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.about/-about-screen.html
+$dokka.location:com.android.dailycat.ui.screens.about//AboutScreenPreview/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.about/-about-screen-preview.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.components////PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.components/index.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.components//Feed/#kotlin.collections.List[com.android.dailycat.model.CatPost]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.components/-feed.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.discover////PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.discover/index.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.discover//DiscoverScreen/#com.android.dailycat.ui.screens.AppViewModel/PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.discover/-discover-screen.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.discover//DiscoverScreenPreview/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.discover/-discover-screen-preview.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.discover//OfflineScreen/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.discover/-offline-screen.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.favorites////PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.favorites/index.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.favorites//FavoritesScreen/#com.android.dailycat.ui.screens.appScreen.favorites.FavoriteViewModel/PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.favorites/-favorites-screen.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.favorites//FavoritesScreenListing/#androidx.compose.ui.Modifier#kotlin.collections.List[com.android.dailycat.model.CatPost]/PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.favorites/-favorites-screen-listing.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.favorites//FavoritesScreenPreview/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.favorites/-favorites-screen-preview.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.favorites//NoFavoritesYetScreenPreview/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.favorites/-no-favorites-yet-screen-preview.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.favorites/FavoritePostsUiState///PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.favorites/-favorite-posts-ui-state/index.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.favorites/FavoritePostsUiState/FavoritePostsUiState/#kotlin.collections.List[com.android.dailycat.model.CatPost]/PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.favorites/-favorite-posts-ui-state/-favorite-posts-ui-state.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.favorites/FavoritePostsUiState/favoritePosts/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.favorites/-favorite-posts-ui-state/favorite-posts.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.favorites/FavoriteViewModel///PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.favorites/-favorite-view-model/index.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.favorites/FavoriteViewModel/FavoriteViewModel/#com.android.dailycat.data.favorites.FavoriteRepository/PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.favorites/-favorite-view-model/-favorite-view-model.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.favorites/FavoriteViewModel/toggleFavorite/#com.android.dailycat.model.CatPost/PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.favorites/-favorite-view-model/toggle-favorite.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen.favorites/FavoriteViewModel/uiState/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen.favorites/-favorite-view-model/ui-state.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen////PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen/index.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen//AppScreen/#kotlin.collections.List[com.android.dailycat.model.TabItem]/PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen/-app-screen.html
+$dokka.location:com.android.dailycat.ui.screens.appScreen//NavigationPreview/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.appScreen/-navigation-preview.html
+$dokka.location:com.android.dailycat.ui.screens.components////PointingToDeclaration/app/com.android.dailycat.ui.screens.components/index.html
+$dokka.location:com.android.dailycat.ui.screens.components//CatImage/#kotlin.ByteArray#kotlin.Boolean/PointingToDeclaration/app/com.android.dailycat.ui.screens.components/-cat-image.html
+$dokka.location:com.android.dailycat.ui.screens.components//CatPostFrame/#com.android.dailycat.model.CatPost#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.android.dailycat.ui.screens.components/-cat-post-frame.html
+$dokka.location:com.android.dailycat.ui.screens.components//Landscape_CatPostPreview/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.components/-landscape_-cat-post-preview.html
+$dokka.location:com.android.dailycat.ui.screens.components//Portrait_CatPostPreview/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.components/-portrait_-cat-post-preview.html
+$dokka.location:com.android.dailycat.ui.screens.components//convertImageByteArrayToBitmap/#kotlin.ByteArray/PointingToDeclaration/app/com.android.dailycat.ui.screens.components/convert-image-byte-array-to-bitmap.html
+$dokka.location:com.android.dailycat.ui.screens.components//getIconByteArray/#android.content.Context/PointingToDeclaration/app/com.android.dailycat.ui.screens.components/get-icon-byte-array.html
+$dokka.location:com.android.dailycat.ui.screens.loader////PointingToDeclaration/app/com.android.dailycat.ui.screens.loader/index.html
+$dokka.location:com.android.dailycat.ui.screens.loader//Loader/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.loader/-loader.html
+$dokka.location:com.android.dailycat.ui.screens.loader//LoaderPreview/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.loader/-loader-preview.html
+$dokka.location:com.android.dailycat.ui.screens.navigation////PointingToDeclaration/app/com.android.dailycat.ui.screens.navigation/index.html
+$dokka.location:com.android.dailycat.ui.screens.navigation//NavGraph/#androidx.compose.foundation.layout.PaddingValues#androidx.navigation.NavHostController/PointingToDeclaration/app/com.android.dailycat.ui.screens.navigation/-nav-graph.html
+$dokka.location:com.android.dailycat.ui.screens.navigation/NavigationEnums.ABOUT///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.android.dailycat.ui.screens.navigation/-navigation-enums/-a-b-o-u-t/index.html
+$dokka.location:com.android.dailycat.ui.screens.navigation/NavigationEnums.APP.DISCOVER///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.android.dailycat.ui.screens.navigation/-navigation-enums/-a-p-p/-d-i-s-c-o-v-e-r/index.html
+$dokka.location:com.android.dailycat.ui.screens.navigation/NavigationEnums.APP.FAVORITES///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.android.dailycat.ui.screens.navigation/-navigation-enums/-a-p-p/-f-a-v-o-r-i-t-e-s/index.html
+$dokka.location:com.android.dailycat.ui.screens.navigation/NavigationEnums.APP///PointingToDeclaration/app/com.android.dailycat.ui.screens.navigation/-navigation-enums/-a-p-p/index.html
+$dokka.location:com.android.dailycat.ui.screens.navigation/NavigationEnums.APP/entries/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.navigation/-navigation-enums/-a-p-p/entries.html
+$dokka.location:com.android.dailycat.ui.screens.navigation/NavigationEnums.APP/valueOf/#kotlin.String/PointingToDeclaration/app/com.android.dailycat.ui.screens.navigation/-navigation-enums/-a-p-p/value-of.html
+$dokka.location:com.android.dailycat.ui.screens.navigation/NavigationEnums.APP/values/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.navigation/-navigation-enums/-a-p-p/values.html
+$dokka.location:com.android.dailycat.ui.screens.navigation/NavigationEnums///PointingToDeclaration/app/com.android.dailycat.ui.screens.navigation/-navigation-enums/index.html
+$dokka.location:com.android.dailycat.ui.screens.navigation/NavigationEnums/entries/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.navigation/-navigation-enums/entries.html
+$dokka.location:com.android.dailycat.ui.screens.navigation/NavigationEnums/valueOf/#kotlin.String/PointingToDeclaration/app/com.android.dailycat.ui.screens.navigation/-navigation-enums/value-of.html
+$dokka.location:com.android.dailycat.ui.screens.navigation/NavigationEnums/values/#/PointingToDeclaration/app/com.android.dailycat.ui.screens.navigation/-navigation-enums/values.html
+$dokka.location:com.android.dailycat.ui.screens////PointingToDeclaration/app/com.android.dailycat.ui.screens/index.html
+$dokka.location:com.android.dailycat.ui.screens/AppState///PointingToDeclaration/app/com.android.dailycat.ui.screens/-app-state/index.html
+$dokka.location:com.android.dailycat.ui.screens/AppState/AppState/#kotlin.Int#kotlin.Boolean/PointingToDeclaration/app/com.android.dailycat.ui.screens/-app-state/-app-state.html
+$dokka.location:com.android.dailycat.ui.screens/AppState/onAboutPage/#/PointingToDeclaration/app/com.android.dailycat.ui.screens/-app-state/on-about-page.html
+$dokka.location:com.android.dailycat.ui.screens/AppState/tabIndex/#/PointingToDeclaration/app/com.android.dailycat.ui.screens/-app-state/tab-index.html
+$dokka.location:com.android.dailycat.ui.screens/AppViewModel///PointingToDeclaration/app/com.android.dailycat.ui.screens/-app-view-model/index.html
+$dokka.location:com.android.dailycat.ui.screens/AppViewModel/AppViewModel/#com.android.dailycat.data.repositories.CatPostRepository/PointingToDeclaration/app/com.android.dailycat.ui.screens/-app-view-model/-app-view-model.html
+$dokka.location:com.android.dailycat.ui.screens/AppViewModel/catPosts/#/PointingToDeclaration/app/com.android.dailycat.ui.screens/-app-view-model/cat-posts.html
+$dokka.location:com.android.dailycat.ui.screens/AppViewModel/getCatPost/#/PointingToDeclaration/app/com.android.dailycat.ui.screens/-app-view-model/get-cat-post.html
+$dokka.location:com.android.dailycat.ui.screens/AppViewModel/setOnAbout/#kotlin.Boolean/PointingToDeclaration/app/com.android.dailycat.ui.screens/-app-view-model/set-on-about.html
+$dokka.location:com.android.dailycat.ui.screens/AppViewModel/setTabIndex/#kotlin.Int/PointingToDeclaration/app/com.android.dailycat.ui.screens/-app-view-model/set-tab-index.html
+$dokka.location:com.android.dailycat.ui.screens/AppViewModel/toggleFavorite/#com.android.dailycat.model.CatPost/PointingToDeclaration/app/com.android.dailycat.ui.screens/-app-view-model/toggle-favorite.html
+$dokka.location:com.android.dailycat.ui.screens/AppViewModel/uiState/#/PointingToDeclaration/app/com.android.dailycat.ui.screens/-app-view-model/ui-state.html
+$dokka.location:com.android.dailycat.ui.screens/TabItems///PointingToDeclaration/app/com.android.dailycat.ui.screens/-tab-items/index.html
+$dokka.location:com.android.dailycat.ui.screens/TabItems/tabList/#/PointingToDeclaration/app/com.android.dailycat.ui.screens/-tab-items/tab-list.html
+$dokka.location:com.android.dailycat.ui.theme////PointingToDeclaration/app/com.android.dailycat.ui.theme/index.html
+$dokka.location:com.android.dailycat.ui.theme//DailyCatTheme/#kotlin.Boolean#kotlin.Boolean#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.android.dailycat.ui.theme/-daily-cat-theme.html
+$dokka.location:com.android.dailycat.ui.theme//Pink40/#/PointingToDeclaration/app/com.android.dailycat.ui.theme/-pink40.html
+$dokka.location:com.android.dailycat.ui.theme//Pink80/#/PointingToDeclaration/app/com.android.dailycat.ui.theme/-pink80.html
+$dokka.location:com.android.dailycat.ui.theme//Purple40/#/PointingToDeclaration/app/com.android.dailycat.ui.theme/-purple40.html
+$dokka.location:com.android.dailycat.ui.theme//Purple80/#/PointingToDeclaration/app/com.android.dailycat.ui.theme/-purple80.html
+$dokka.location:com.android.dailycat.ui.theme//PurpleGrey40/#/PointingToDeclaration/app/com.android.dailycat.ui.theme/-purple-grey40.html
+$dokka.location:com.android.dailycat.ui.theme//PurpleGrey80/#/PointingToDeclaration/app/com.android.dailycat.ui.theme/-purple-grey80.html
+$dokka.location:com.android.dailycat.ui.theme//Typography/#/PointingToDeclaration/app/com.android.dailycat.ui.theme/-typography.html
+$dokka.location:com.android.dailycat.ui////PointingToDeclaration/app/com.android.dailycat.ui/index.html
+$dokka.location:com.android.dailycat.ui/AppViewModelProvider///PointingToDeclaration/app/com.android.dailycat.ui/-app-view-model-provider/index.html
+$dokka.location:com.android.dailycat.ui/AppViewModelProvider/Factory/#/PointingToDeclaration/app/com.android.dailycat.ui/-app-view-model-provider/-factory.html
+$dokka.location:com.android.dailycat.ui/AppViewModelProvider/dailyCatApplication/androidx.lifecycle.viewmodel.CreationExtras#/PointingToDeclaration/app/com.android.dailycat.ui/-app-view-model-provider/daily-cat-application.html
+$dokka.location:com.android.dailycat////PointingToDeclaration/app/com.android.dailycat/index.html
+$dokka.location:com.android.dailycat//DailyCatApp/#androidx.navigation.NavHostController/PointingToDeclaration/app/com.android.dailycat/-daily-cat-app.html
+$dokka.location:com.android.dailycat/DailyCatApplication///PointingToDeclaration/app/com.android.dailycat/-daily-cat-application/index.html
+$dokka.location:com.android.dailycat/DailyCatApplication/DailyCatApplication/#/PointingToDeclaration/app/com.android.dailycat/-daily-cat-application/-daily-cat-application.html
+$dokka.location:com.android.dailycat/DailyCatApplication/container/#/PointingToDeclaration/app/com.android.dailycat/-daily-cat-application/container.html
+$dokka.location:com.android.dailycat/DailyCatApplication/onCreate/#/PointingToDeclaration/app/com.android.dailycat/-daily-cat-application/on-create.html
+$dokka.location:com.android.dailycat/MainActivity///PointingToDeclaration/app/com.android.dailycat/-main-activity/index.html
+$dokka.location:com.android.dailycat/MainActivity/MainActivity/#/PointingToDeclaration/app/com.android.dailycat/-main-activity/-main-activity.html
+com.android.dailycat
+com.android.dailycat.data
+com.android.dailycat.data.favorites
+com.android.dailycat.data.repositories
+com.android.dailycat.model
+com.android.dailycat.network
+com.android.dailycat.ui
+com.android.dailycat.ui.screens
+com.android.dailycat.ui.screens.about
+com.android.dailycat.ui.screens.appScreen
+com.android.dailycat.ui.screens.appScreen.components
+com.android.dailycat.ui.screens.appScreen.discover
+com.android.dailycat.ui.screens.appScreen.favorites
+com.android.dailycat.ui.screens.components
+com.android.dailycat.ui.screens.loader
+com.android.dailycat.ui.screens.navigation
+com.android.dailycat.ui.theme
+
