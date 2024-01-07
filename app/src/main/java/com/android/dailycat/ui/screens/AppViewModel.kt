@@ -11,7 +11,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.android.dailycat.data.favorites.FavoriteRepository
 import com.android.dailycat.data.repositories.CatPostRepository
 import com.android.dailycat.model.CatPost
 import com.android.dailycat.model.TabItem
@@ -49,8 +48,7 @@ data class AppState(
 )
 
 class AppViewModel(
-    private val catPostRepository: CatPostRepository,
-    private val favoriteRepository: FavoriteRepository
+    private val catPostRepository: CatPostRepository
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(AppState())
@@ -66,11 +64,6 @@ class AppViewModel(
     var dailyCatApiState: DailyCatApiState by mutableStateOf(DailyCatApiState.Loading)
         private set
 
-
-//    val catPost: LiveData<CatPost> = liveData {
-//        val post = catPostRepository.getCatPost()
-//        emit(post)
-//    }
 
     fun getCatPost() {
         try {
@@ -104,19 +97,27 @@ class AppViewModel(
     }
 
 
-    fun addToFavorites(post: CatPost) {
-        viewModelScope.launch {
-            favoriteRepository.insertFavoritePost(post)
+    fun toggleFavorite(catPost: CatPost) {
+        // Create a new list from the current state to avoid mutating the current state directly.
+        val updatedList = _catPosts.value.toMutableList()
+
+        // Find the index of the cat post to update.
+        val postIndex = updatedList.indexOfFirst { it == catPost }
+
+        if (postIndex != -1) {
+            // If the post is found, copy it with the updated favorite status.
+            val updatedPost =
+                updatedList[postIndex].copy(favorite = !updatedList[postIndex].favorite)
+
+            // Update the list with the new post.
+            updatedList[postIndex] = updatedPost
+
+            // Update the state to emit the new list.
+            _catPosts.value = updatedList
         }
+
     }
 
-    fun removeFromFavorites(post: CatPost) {
-        viewModelScope.launch {
-            Log.d("ToDelete", post.id.toString() + "\r\n" + post.quote)
-
-            favoriteRepository.deleteFavoritePost(post)
-        }
-    }
 
     fun setTabIndex(index: Int) {
         _uiState.update {

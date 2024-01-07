@@ -17,8 +17,7 @@ object AppViewModelProvider {
                 val application =
                     (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY]) as DailyCatApplication
                 Instance = AppViewModel(
-                    application.container.catPostRepository,
-                    application.container.favoriteRepository
+                    application.container.catPostRepository
                 )
             }
             Instance!!

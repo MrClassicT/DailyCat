@@ -26,15 +26,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import com.android.dailycat.R
+import com.android.dailycat.model.CatPost
 import java.io.ByteArrayOutputStream
 
 
 @Composable
 fun CatPostFrame(
-    catImage: ByteArray,
-    catQuote: String,
-    isFavorite: Boolean = false,
-    onFavoriteClick: (Boolean) -> Unit = {}
+    catPost: CatPost,
+    onFavoriteClick: () -> Unit = {}
 ) {
 
 
@@ -44,10 +43,10 @@ fun CatPostFrame(
             .zIndex(.1f), horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        CatImage(catImage)
+        CatImage(catPost.image)
 
         Text(
-            text = catQuote, fontSize = 18.sp, textAlign = TextAlign.Center
+            text = catPost.quote, fontSize = 18.sp, textAlign = TextAlign.Center
         )
     }
 
@@ -58,13 +57,12 @@ fun CatPostFrame(
         horizontalAlignment = Alignment.End,
         verticalArrangement = Arrangement.Center
     ) {
-        IconButton(onClick = {
-            onFavoriteClick(!isFavorite)
-        }) {
-            if (isFavorite) Icon(
-                Icons.Default.Star, contentDescription = "Remove from favorites"
-            )
-            else Icon(Icons.Default.StarBorder, contentDescription = "Add to favorites")
+        IconButton(onClick = onFavoriteClick) {
+            if (catPost.favorite) {
+                Icon(Icons.Default.Star, contentDescription = "Remove from favorites")
+            } else {
+                Icon(Icons.Default.StarBorder, contentDescription = "Add to favorites")
+            }
         }
     }
 
@@ -98,8 +96,10 @@ fun CatPostPreview() {
 
     getIconByteArray(LocalContext.current)?.let {
         CatPostFrame(
-            catImage = it, // Template image.
-            catQuote = "Meow! Time spent with cats is never wasted.",
+            CatPost(
+                image = it, // Template image.
+                quote = "Meow! Time spent with cats is never wasted."
+            )
         )
     }
 }

@@ -1,7 +1,6 @@
 package com.android.dailycat.data.favorites
 
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -16,6 +15,6 @@ interface FavoriteDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(post: CatPost)
 
-    @Delete
-    suspend fun delete(post: CatPost)
+    @Query("DELETE FROM favorites WHERE quote = :quote AND image = :image")
+    suspend fun delete(quote: String, image: ByteArray)
 }
