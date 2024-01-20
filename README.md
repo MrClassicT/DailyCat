@@ -33,6 +33,10 @@ We welcome contributions from the community! If you have an idea for improving D
 2. **Make Your Changes:** Implement your feature or fix.
 3. **Submit a Pull Request:** Once you're happy with your changes, submit a pull request for review.
 
+## Sponsor 
+Would you like to support my work and my studies? Provide me with some money for gas so I can relax a bit! :) 
+https://paypal.me/dutchgamingtsm 
+
 ## License
 
 DailyCat is open source and has been developed for educational purposes. Use of this app is perfectly fine, although using it commercially is not allowed. Please contact me first if you were somehow interested in using this commercially. :)
